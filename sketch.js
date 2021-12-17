@@ -216,20 +216,21 @@ function draw() {
     magic.play()
     apple3.destroy()
   }
-  if(guy.isTouching(monster)){
-    guy.x = 50
-    guy.y = 530
-    guy.scale = 0.4
-    score = 0
-    die.play()
-  }
-  
+
   spawnClouds()
   if(guy.isTouching(wall18)){
 
     console.log("die")    
     guy.changeAnimation("win",pinkninjaimg)
     magic.play()
+  }
+  if(guy.isTouching(monster)){ 
+    guy.x = 50 
+    guy.y = 530 
+    guy.scale = 0.4 
+    score = 0 
+    guy.changeAnimation("win") 
+    die.play() 
   }
   drawSprites()
 }
